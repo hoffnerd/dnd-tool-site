@@ -1,0 +1,1163 @@
+[
+    {
+        "key": "dragonborn",
+        "display": "Dragonborn",
+        "sizes": [
+            "M"
+        ],
+        "appearance": {
+            "height": {
+                "base": 66,
+                "mod": "2d8"
+            },
+            "weight": {
+                "base": 175,
+                "mod": "2d6"
+            },
+            "age": {
+                "mature": 15,
+                "max": 80
+            }
+        },
+        "speed": 30,
+        "resist": [
+            {
+                "choose": {
+                    "from": [
+                        "acid",
+                        "cold",
+                        "fire",
+                        "lightning",
+                        "poison"
+                    ]
+                }
+            }
+        ],
+        "language": {
+            "common": true,
+            "draconic": true
+        },
+        "ability": {
+            "str": 2,
+            "cha": 1
+        },
+        "traits": [
+            "draconicAncestry",
+            "breathWeapon",
+            "damageResistance"
+        ],
+        "traitTags": [
+            "uncommonRace"
+        ],
+        "subraces": [
+            {
+                "key": "options",
+                "display": "Subrace (Draconic Ancestry)",
+                "description": "You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the selector.",
+                "additionalKeys": [
+                    "damageType",
+                    "description"
+                ]
+            },
+            {
+                "key": "black",
+                "display": "Black",
+                "damageType": "Acid",
+                "description": "5 by 30 ft. line (Dex. save)"
+            },
+            {
+                "key": "blue",
+                "display": "Blue",
+                "damageType": "Lightning",
+                "description": "5 by 30 ft. line (Dex. save)"
+            },
+            {
+                "key": "brass",
+                "display": "Brass",
+                "damageType": "Fire",
+                "description": "5 by 30 ft. line (Dex. save)"
+            },
+            {
+                "key": "bronze",
+                "display": "Bronze",
+                "damageType": "Lightning",
+                "description": "5 by 30 ft. line (Dex. save)"
+            },
+            {
+                "key": "copper",
+                "display": "Copper",
+                "damageType": "Acid",
+                "description": "5 by 30 ft. line (Dex. save)"
+            },
+            {
+                "key": "gold",
+                "display": "Gold",
+                "damageType": "Fire",
+                "description": "15 ft. cone (Con. save)"
+            },
+            {
+                "key": "green",
+                "display": "Green",
+                "damageType": "Poison",
+                "description": "15 ft. cone (Con. save)"
+            },
+            {
+                "key": "red",
+                "display": "Red",
+                "damageType": "Fire",
+                "description": "15 ft. cone (Con. save)"
+            },
+            {
+                "key": "silver",
+                "display": "Silver",
+                "damageType": "Cold",
+                "description": "15 ft. cone (Con. save)"
+            },
+            {
+                "key": "white",
+                "display": "White",
+                "damageType": "Cold",
+                "description": "15 ft. cone (Con. save)"
+            }
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 32,
+            "srd": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "soundClip": {
+                "type": "internal",
+                "path": "races/dragonborn.mp3"
+            }
+        },
+        "overrides": {
+            "key": "dragonborn",
+            "subraces": [
+                {
+                    "meta": {
+                        "source": "PHB",
+                        "page": 32,
+                        "srd": true,
+                        "hasFluff": true,
+                        "hasFluffImages": true
+                    },
+                    "notConverted": {
+                        "raceName": "Dragonborn",
+                        "raceSource": "PHB",
+                        "_versions": [
+                            {
+                                "_template": {
+                                    "name": "Dragonborn ({{color}})",
+                                    "source": "PHB",
+                                    "_mod": {
+                                        "entries": [
+                                            {
+                                                "mode": "removeArr",
+                                                "names": "Draconic Ancestry"
+                                            },
+                                            {
+                                                "mode": "replaceArr",
+                                                "replace": "Breath Weapon",
+                                                "items": {
+                                                    "type": "entries",
+                                                    "name": "Breath Weapon",
+                                                    "entries": [
+                                                        "You can use your action to exhale destructive energy in a {{area}}.",
+                                                        "When you use your breath weapon, each creature in the area of the exhalation must make a {{savingThrow}} saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes {@damage 2d6} {{damageType}} damage on a failed save, and half as much damage on a successful one. The damage increases to {@damage 3d6} at 6th level, {@damage 4d6} at 11th level, and {@damage 5d6} at 16th level.",
+                                                        "After you use your breath weapon, you can't use it again until you complete a short or long rest."
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "mode": "replaceArr",
+                                                "replace": "Damage Resistance",
+                                                "items": {
+                                                    "type": "entries",
+                                                    "name": "Damage Resistance",
+                                                    "entries": [
+                                                        "You have resistance to {{damageType}} damage."
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "_implementations": [
+                                    {
+                                        "_variables": {
+                                            "color": "Black",
+                                            "damageType": "acid",
+                                            "area": "5-foot-wide, 30-foot-long line",
+                                            "savingThrow": "Dexterity"
+                                        },
+                                        "resist": [
+                                            "acid"
+                                        ]
+                                    },
+                                    {
+                                        "_variables": {
+                                            "color": "Blue",
+                                            "damageType": "lightning",
+                                            "area": "5-foot-wide, 30-foot-long line",
+                                            "savingThrow": "Dexterity"
+                                        },
+                                        "resist": [
+                                            "lightning"
+                                        ]
+                                    },
+                                    {
+                                        "_variables": {
+                                            "color": "Brass",
+                                            "damageType": "fire",
+                                            "area": "5-foot-wide, 30-foot-long line",
+                                            "savingThrow": "Dexterity"
+                                        },
+                                        "resist": [
+                                            "fire"
+                                        ]
+                                    },
+                                    {
+                                        "_variables": {
+                                            "color": "Bronze",
+                                            "damageType": "lightning",
+                                            "area": "5-foot-wide, 30-foot-long line",
+                                            "savingThrow": "Dexterity"
+                                        },
+                                        "resist": [
+                                            "lightning"
+                                        ]
+                                    },
+                                    {
+                                        "_variables": {
+                                            "color": "Copper",
+                                            "damageType": "acid",
+                                            "area": "5-foot-wide, 30-foot-long line",
+                                            "savingThrow": "Dexterity"
+                                        },
+                                        "resist": [
+                                            "acid"
+                                        ]
+                                    },
+                                    {
+                                        "_variables": {
+                                            "color": "Gold",
+                                            "damageType": "fire",
+                                            "area": "15-foot cone",
+                                            "savingThrow": "Dexterity"
+                                        },
+                                        "resist": [
+                                            "fire"
+                                        ]
+                                    },
+                                    {
+                                        "_variables": {
+                                            "color": "Green",
+                                            "damageType": "poison",
+                                            "area": "15-foot cone",
+                                            "savingThrow": "Constitution"
+                                        },
+                                        "resist": [
+                                            "poison"
+                                        ]
+                                    },
+                                    {
+                                        "_variables": {
+                                            "color": "Red",
+                                            "damageType": "fire",
+                                            "area": "15-foot cone",
+                                            "savingThrow": "Dexterity"
+                                        },
+                                        "resist": [
+                                            "fire"
+                                        ]
+                                    },
+                                    {
+                                        "_variables": {
+                                            "color": "Silver",
+                                            "damageType": "cold",
+                                            "area": "15-foot cone",
+                                            "savingThrow": "Constitution"
+                                        },
+                                        "resist": [
+                                            "cold"
+                                        ]
+                                    },
+                                    {
+                                        "_variables": {
+                                            "color": "White",
+                                            "damageType": "cold",
+                                            "area": "15-foot cone",
+                                            "savingThrow": "Constitution"
+                                        },
+                                        "resist": [
+                                            "cold"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "key": "dwarf",
+        "display": "Dwarf",
+        "sizes": [
+            "M"
+        ],
+        "appearance": {
+            "age": {
+                "mature": 20,
+                "max": 350
+            }
+        },
+        "speed": 25,
+        "resist": [
+            "poison"
+        ],
+        "weapon": {
+            "battleaxe": true,
+            "handaxe": true,
+            "lighthammer": true,
+            "warhammer": true
+        },
+        "language": {
+            "common": true,
+            "dwarvish": true
+        },
+        "ability": {
+            "con": 2
+        },
+        "traits": [
+            "darkvision",
+            "dwarvenResilience",
+            "dwarvenCombatTraining",
+            "stonecunning"
+        ],
+        "traitTags": [
+            "toolProficiency"
+        ],
+        "subraces": [
+            {
+                "key": "hill",
+                "display": "Hill",
+                "appearance": {
+                    "height": {
+                        "base": 44,
+                        "mod": "2d4"
+                    },
+                    "weight": {
+                        "base": 115,
+                        "mod": "2d6"
+                    }
+                },
+                "ability": {
+                    "wis": 1
+                },
+                "traits": [
+                    "dwarvenToughness"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 20,
+                    "srd": true,
+                    "basicRules": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Dwarf",
+                    "raceSource": "PHB"
+                }
+            },
+            {
+                "key": "mountain",
+                "display": "Mountain",
+                "appearance": {
+                    "height": {
+                        "base": 48,
+                        "mod": "2d4"
+                    },
+                    "weight": {
+                        "base": 130,
+                        "mod": "2d6"
+                    }
+                },
+                "armor": {
+                    "light": true,
+                    "medium": true
+                },
+                "ability": {
+                    "str": 2
+                },
+                "traits": [
+                    "dwarvenArmorTraining"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 20,
+                    "basicRules": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Dwarf",
+                    "raceSource": "PHB"
+                }
+            }
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 18,
+            "srd": true,
+            "basicRules": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "darkvision": 60,
+            "soundClip": {
+                "type": "internal",
+                "path": "races/dwarf.mp3"
+            }
+        }
+    },
+    {
+        "key": "elf",
+        "display": "Elf",
+        "sizes": [
+            "M"
+        ],
+        "appearance": {
+            "age": {
+                "mature": 100,
+                "max": 750
+            }
+        },
+        "speed": 30,
+        "language": {
+            "common": true,
+            "elvish": true
+        },
+        "ability": {
+            "dex": 2
+        },
+        "skill": {
+            "perception": true
+        },
+        "traits": [
+            "darkvision",
+            "keenSenses",
+            "feyAncestry",
+            "trance"
+        ],
+        "traitTags": [
+            "improvedResting"
+        ],
+        "subraces": [
+            {
+                "key": "drow",
+                "display": "Drow",
+                "appearance": {
+                    "height": {
+                        "base": 53,
+                        "mod": "2d6"
+                    },
+                    "weight": {
+                        "base": 75,
+                        "mod": "1d6"
+                    }
+                },
+                "weapon": {
+                    "rapier": true,
+                    "shortsword": true,
+                    "handcrossbow": true
+                },
+                "ability": {
+                    "cha": 1
+                },
+                "spells": [
+                    {
+                        "spell": "dancing lights#c",
+                        "ability": "cha",
+                        "level": 1,
+                        "type": "known"
+                    },
+                    {
+                        "spell": "faerie fire",
+                        "ability": "cha",
+                        "level": 3,
+                        "type": "innate",
+                        "replenish": "daily",
+                        "replenishAmount": "1"
+                    },
+                    {
+                        "spell": "darkness",
+                        "ability": "cha",
+                        "level": 5,
+                        "type": "innate",
+                        "replenish": "daily",
+                        "replenishAmount": "1"
+                    }
+                ],
+                "traits": [
+                    "superiorDarkvision",
+                    "sunlightSensitivity",
+                    "drowMagic",
+                    "drowWeaponTraining"
+                ],
+                "traitTags": [
+                    "sunlightSensitivity"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 24,
+                    "hasFluff": true
+                },
+                "notConverted": {
+                    "alias": [
+                        "Dark"
+                    ],
+                    "raceName": "Elf",
+                    "raceSource": "PHB",
+                    "darkvision": 120
+                }
+            },
+            {
+                "key": "high",
+                "display": "High",
+                "appearance": {
+                    "height": {
+                        "base": 54,
+                        "mod": "2d10"
+                    },
+                    "weight": {
+                        "base": 90,
+                        "mod": "1d4"
+                    }
+                },
+                "speed": 30,
+                "weapon": {
+                    "longsword": true,
+                    "shortsword": true,
+                    "shortbow": true,
+                    "longbow": true
+                },
+                "ability": {
+                    "int": 1
+                },
+                "spells": [
+                    {
+                        "spell": {
+                            "choose": "level=0|class=Wizard"
+                        },
+                        "ability": "int",
+                        "level": 1,
+                        "type": "known",
+                        "replenish": "_"
+                    }
+                ],
+                "traits": [
+                    "elfWeaponTraining",
+                    "cantrip"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 23,
+                    "srd": true,
+                    "basicRules": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Elf",
+                    "raceSource": "PHB"
+                }
+            },
+            {
+                "key": "wood",
+                "display": "Wood",
+                "appearance": {
+                    "height": {
+                        "base": 54,
+                        "mod": "2d10"
+                    },
+                    "weight": {
+                        "base": 100,
+                        "mod": "1d4"
+                    }
+                },
+                "speed": 35,
+                "weapon": {
+                    "longsword": true,
+                    "shortsword": true,
+                    "shortbow": true,
+                    "longbow": true
+                },
+                "ability": {
+                    "wis": 1
+                },
+                "traits": [
+                    "elfWeaponTraining",
+                    "fleetofFoot",
+                    "maskoftheWild"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 24,
+                    "basicRules": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Elf",
+                    "raceSource": "PHB"
+                }
+            }
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 21,
+            "srd": true,
+            "basicRules": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "darkvision": 60,
+            "soundClip": {
+                "type": "internal",
+                "path": "races/elf.mp3"
+            }
+        }
+    },
+    {
+        "key": "gnome",
+        "display": "Gnome",
+        "sizes": [
+            "S"
+        ],
+        "appearance": {
+            "height": {
+                "base": 35,
+                "mod": "2d4"
+            },
+            "weight": {
+                "base": 35
+            },
+            "age": {
+                "mature": 40,
+                "max": 500
+            }
+        },
+        "speed": 25,
+        "language": {
+            "common": true,
+            "gnomish": true
+        },
+        "ability": {
+            "int": 2
+        },
+        "traits": [
+            "darkvision",
+            "gnomeCunning"
+        ],
+        "traitTags": [
+            "uncommonRace"
+        ],
+        "subraces": [
+            {
+                "key": "forest",
+                "display": "Forest",
+                "ability": {
+                    "dex": 1
+                },
+                "spells": [
+                    {
+                        "spell": "minor illusion#c",
+                        "ability": "int",
+                        "level": 1,
+                        "type": "known"
+                    }
+                ],
+                "traits": [
+                    "naturalIllusionist",
+                    "speakwithSmallBeasts"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 37,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Gnome",
+                    "raceSource": "PHB"
+                }
+            },
+            {
+                "key": "rock",
+                "display": "Rock",
+                "ability": {
+                    "con": 1
+                },
+                "traits": [
+                    "artificersLore",
+                    "tinker"
+                ],
+                "traitTags": [
+                    "toolProficiency"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 37,
+                    "srd": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Gnome",
+                    "raceSource": "PHB"
+                }
+            }
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 35,
+            "srd": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "darkvision": 60,
+            "soundClip": {
+                "type": "internal",
+                "path": "races/gnome.mp3"
+            }
+        }
+    },
+    {
+        "key": "halfElf",
+        "display": "Half-Elf",
+        "sizes": [
+            "M"
+        ],
+        "appearance": {
+            "height": {
+                "base": 57,
+                "mod": "2d8"
+            },
+            "weight": {
+                "base": 110,
+                "mod": "2d4"
+            },
+            "age": {
+                "mature": 20,
+                "max": 180
+            }
+        },
+        "speed": 30,
+        "language": {
+            "common": true,
+            "elvish": true,
+            "anyStandard": 1
+        },
+        "ability": {
+            "cha": 2,
+            "choose": {
+                "from": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis"
+                ],
+                "count": 2
+            }
+        },
+        "skill": {
+            "any": 2
+        },
+        "traits": [
+            "darkvision",
+            "feyAncestry"
+        ],
+        "traitTags": [
+            "uncommonRace"
+        ],
+        "subraces": [
+            {
+                "meta": {
+                    "source": "PHB",
+                    "page": 38,
+                    "srd": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Half-Elf",
+                    "raceSource": "PHB"
+                }
+            }
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 38,
+            "srd": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "darkvision": 60,
+            "soundClip": {
+                "type": "internal",
+                "path": "races/half-elf.mp3"
+            }
+        }
+    },
+    {
+        "key": "halfOrc",
+        "display": "Half-Orc",
+        "sizes": [
+            "M"
+        ],
+        "appearance": {
+            "height": {
+                "base": 58,
+                "mod": "2d10"
+            },
+            "weight": {
+                "base": 140,
+                "mod": "2d6"
+            },
+            "age": {
+                "mature": 14,
+                "max": 75
+            }
+        },
+        "speed": 30,
+        "language": {
+            "common": true,
+            "orc": true
+        },
+        "ability": {
+            "str": 2,
+            "con": 1
+        },
+        "skill": {
+            "intimidation": true
+        },
+        "traits": [
+            "darkvision",
+            "menacing",
+            "relentlessEndurance",
+            "savageAttacks"
+        ],
+        "traitTags": [
+            "uncommonRace"
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 40,
+            "srd": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "darkvision": 60,
+            "soundClip": {
+                "type": "internal",
+                "path": "races/half-orc.mp3"
+            }
+        }
+    },
+    {
+        "key": "halfling",
+        "display": "Halfling",
+        "sizes": [
+            "S"
+        ],
+        "appearance": {
+            "height": {
+                "base": 31,
+                "mod": "2d4"
+            },
+            "weight": {
+                "base": 35
+            },
+            "age": {
+                "mature": 20,
+                "max": 250
+            }
+        },
+        "speed": 25,
+        "language": {
+            "common": true,
+            "halfling": true
+        },
+        "ability": {
+            "dex": 2
+        },
+        "traits": [
+            "lucky",
+            "brave",
+            "halflingNimbleness"
+        ],
+        "subraces": [
+            {
+                "key": "lightfoot",
+                "display": "Lightfoot",
+                "ability": {
+                    "cha": 1
+                },
+                "traits": [
+                    "naturallyStealthy"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 28,
+                    "srd": true,
+                    "basicRules": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Halfling",
+                    "raceSource": "PHB"
+                }
+            },
+            {
+                "key": "stout",
+                "display": "Stout",
+                "resist": [
+                    "poison"
+                ],
+                "ability": {
+                    "con": 1
+                },
+                "traits": [
+                    "stoutResilience"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 28,
+                    "basicRules": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Halfling",
+                    "raceSource": "PHB"
+                }
+            }
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 26,
+            "srd": true,
+            "basicRules": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "soundClip": {
+                "type": "internal",
+                "path": "races/halfling.mp3"
+            }
+        }
+    },
+    {
+        "key": "human",
+        "display": "Human",
+        "sizes": [
+            "M"
+        ],
+        "appearance": {
+            "height": {
+                "base": 56,
+                "mod": "2d10"
+            },
+            "weight": {
+                "base": 110,
+                "mod": "2d4"
+            },
+            "age": {
+                "mature": 20,
+                "max": 100
+            }
+        },
+        "speed": 30,
+        "language": {
+            "common": true,
+            "anyStandard": 1
+        },
+        "subraces": [
+            {
+                "ability": {
+                    "str": 1,
+                    "dex": 1,
+                    "con": 1,
+                    "int": 1,
+                    "wis": 1,
+                    "cha": 1
+                },
+                "meta": {
+                    "source": "PHB",
+                    "page": 29,
+                    "basicRules": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Human",
+                    "raceSource": "PHB"
+                }
+            },
+            {
+                "key": "variant",
+                "display": "Variant",
+                "ability": {
+                    "choose": {
+                        "from": [
+                            "str",
+                            "dex",
+                            "con",
+                            "int",
+                            "wis",
+                            "cha"
+                        ],
+                        "count": 2
+                    }
+                },
+                "skill": {
+                    "any": 1
+                },
+                "feat": {
+                    "any": 1
+                },
+                "meta": {
+                    "source": "PHB",
+                    "page": 31,
+                    "basicRules": true
+                },
+                "notConverted": {
+                    "raceName": "Human",
+                    "raceSource": "PHB"
+                }
+            }
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 29,
+            "srd": true,
+            "basicRules": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "soundClip": {
+                "type": "internal",
+                "path": "races/human.mp3"
+            }
+        }
+    },
+    {
+        "key": "tiefling",
+        "display": "Tiefling",
+        "sizes": [
+            "M"
+        ],
+        "appearance": {
+            "height": {
+                "base": 57,
+                "mod": "2d8"
+            },
+            "weight": {
+                "base": 110,
+                "mod": "2d4"
+            },
+            "age": {
+                "mature": 20,
+                "max": 100
+            }
+        },
+        "speed": 30,
+        "resist": [
+            "fire"
+        ],
+        "language": {
+            "common": true,
+            "infernal": true
+        },
+        "ability": {
+            "cha": 2,
+            "int": 1
+        },
+        "spells": [
+            {
+                "spell": "thaumaturgy#c",
+                "ability": "cha",
+                "level": 1,
+                "type": "known"
+            },
+            {
+                "spell": "hellish rebuke#2",
+                "ability": "cha",
+                "level": 3,
+                "type": "innate",
+                "replenish": "daily",
+                "replenishAmount": "1"
+            },
+            {
+                "spell": "darkness",
+                "ability": "cha",
+                "level": 5,
+                "type": "innate",
+                "replenish": "daily",
+                "replenishAmount": "1"
+            }
+        ],
+        "traits": [
+            "darkvision",
+            "hellishResistance",
+            "infernalLegacy"
+        ],
+        "traitTags": [
+            "uncommonRace"
+        ],
+        "subraces": [
+            {
+                "meta": {
+                    "source": "PHB",
+                    "page": 42,
+                    "srd": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Tiefling",
+                    "raceSource": "PHB"
+                }
+            }
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 42,
+            "srd": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "darkvision": 60,
+            "soundClip": {
+                "type": "internal",
+                "path": "races/tiefling.mp3"
+            }
+        }
+    }
+]

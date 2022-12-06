@@ -1,0 +1,189 @@
+[
+    {
+        "key": "dwarf",
+        "display": "Dwarf",
+        "sizes": [
+            "M"
+        ],
+        "appearance": {
+            "age": {
+                "mature": 20,
+                "max": 350
+            }
+        },
+        "speed": 25,
+        "resist": [
+            "poison"
+        ],
+        "weapon": {
+            "battleaxe": true,
+            "handaxe": true,
+            "lighthammer": true,
+            "warhammer": true
+        },
+        "language": {
+            "common": true,
+            "dwarvish": true
+        },
+        "ability": {
+            "con": 2
+        },
+        "traits": [
+            "darkvision",
+            "dwarvenResilience",
+            "dwarvenCombatTraining",
+            "stonecunning"
+        ],
+        "traitTags": [
+            "toolProficiency"
+        ],
+        "subrace": [
+            {
+                "key": "hill",
+                "display": "Hill",
+                "appearance": {
+                    "height": {
+                        "base": 44,
+                        "mod": "2d4"
+                    },
+                    "weight": {
+                        "base": 115,
+                        "mod": "2d6"
+                    }
+                },
+                "ability": {
+                    "wis": 1
+                },
+                "traits": [
+                    "dwarvenToughness"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 20,
+                    "srd": true,
+                    "basicRules": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Dwarf",
+                    "raceSource": "PHB"
+                }
+            },
+            {
+                "key": "mountain",
+                "display": "Mountain",
+                "appearance": {
+                    "height": {
+                        "base": 48,
+                        "mod": "2d4"
+                    },
+                    "weight": {
+                        "base": 130,
+                        "mod": "2d6"
+                    }
+                },
+                "armor": {
+                    "light": true,
+                    "medium": true
+                },
+                "ability": {
+                    "str": 2
+                },
+                "traits": [
+                    "dwarvenArmorTraining"
+                ],
+                "meta": {
+                    "source": "PHB",
+                    "page": 20,
+                    "basicRules": true,
+                    "hasFluff": true,
+                    "hasFluffImages": true
+                },
+                "notConverted": {
+                    "raceName": "Dwarf",
+                    "raceSource": "PHB"
+                }
+            }
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 18,
+            "srd": true,
+            "basicRules": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "darkvision": 60,
+            "soundClip": {
+                "type": "internal",
+                "path": "races/dwarf.mp3"
+            }
+        }
+    },
+    {
+        "key": "halfElf",
+        "display": "Half-Elf",
+        "sizes": [
+            "M"
+        ],
+        "appearance": {
+            "height": {
+                "base": 57,
+                "mod": "2d8"
+            },
+            "weight": {
+                "base": 110,
+                "mod": "2d4"
+            },
+            "age": {
+                "mature": 20,
+                "max": 180
+            }
+        },
+        "speed": 30,
+        "language": {
+            "common": true,
+            "elvish": true,
+            "anyStandard": 1
+        },
+        "ability": {
+            "cha": 2,
+            "choose": {
+                "from": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis"
+                ],
+                "count": 2
+            }
+        },
+        "skill": {
+            "any": 2
+        },
+        "traits": [
+            "darkvision",
+            "feyAncestry"
+        ],
+        "traitTags": [
+            "uncommonRace"
+        ],
+        "meta": {
+            "source": "PHB",
+            "page": 38,
+            "srd": true,
+            "hasFluff": true,
+            "hasFluffImages": true
+        },
+        "notConverted": {
+            "darkvision": 60,
+            "soundClip": {
+                "type": "internal",
+                "path": "races/half-elf.mp3"
+            }
+        }
+    }
+]
